@@ -55,6 +55,7 @@ LIBRARIES       =
 ifeq ($(BUILD_OPENDINGUX), 0)
 BUILD_DEBUG     = 1
 endif
+endif
 
 
 ifdef BUILD_WIN
