@@ -469,9 +469,9 @@ endif
 
 ifdef BUILD_OPENDINGUX
 ifeq ($(BUILD_GCW0), 1)
-CFLAGS             += -D_REENTRANT -DOPENDINGUX -DGCW0 -O2 -fomit-frame-pointer -ffunction-sections -ffast-math  -G0 -mbranch-likely
+CFLAGS             += -D_REENTRANT -DOPENDINGUX -DGCW0 -O3 -fomit-frame-pointer -ffunction-sections -ffast-math  -G0 -mbranch-likely
 else
-CFLAGS             += -D_REENTRANT -DOPENDINGUX -O2 -fomit-frame-pointer -ffunction-sections -ffast-math  -G0 -mbranch-likely
+CFLAGS             += -D_REENTRANT -DOPENDINGUX -O3 -fomit-frame-pointer -ffunction-sections -ffast-math  -G0 -mbranch-likely
 endif
 endif
 

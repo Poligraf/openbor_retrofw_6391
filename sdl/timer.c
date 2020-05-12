@@ -13,12 +13,16 @@
 #define GETTIME_FREQ (1000)
 
 static unsigned lastinterval = 0;
+#ifndef OPENDINGUX
 static u64 startcounter;
+#endif
 unsigned newticks = 0;
 
 void borTimerInit()
 {
+	#ifndef OPENDINGUX
 	startcounter = SDL_GetPerformanceCounter();
+	#endif
 }
 
 void borTimerExit(){}
@@ -41,6 +45,7 @@ unsigned timer_gettick()
 	return SDL_GetTicks();
 }
 
+#ifndef OPENDINGUX
 u64 timer_uticks()
 {
 	u64 freq = SDL_GetPerformanceFrequency();
@@ -63,4 +68,25 @@ void set_ticks(unsigned value)
     newticks = value;
 }
 
+#endif
 
+
+u64 timer_uticks()
+{
+	return timer_gettick() * 1000LL;
+}
+
+unsigned get_last_interval()
+{
+	return lastinterval;
+}
+
+void set_last_interval(unsigned value)
+{
+	lastinterval = value;
+}
+
+void set_ticks(unsigned value)
+{
+    newticks = value;
+}
