@@ -18,8 +18,19 @@
 
 #define T_AXIS 7000
 
+#ifdef ANDROID
+#include "jniutils.h"
+#endif
+
+
+
 SDL_Joystick *joystick[JOY_LIST_TOTAL];         // SDL struct for joysticks
+#ifndef OPENDINGUX
+
 SDL_Haptic *joystick_haptic[JOY_LIST_TOTAL];   // SDL haptic for joysticks
+#endif
+
+
 static int usejoy;						        // To be or Not to be used?
 static int numjoy;						        // Number of Joy(s) found
 static int lastkey;						        // Last keyboard key Pressed
@@ -78,6 +89,14 @@ void getPads(Uint8* keystate, Uint8* keystate_def)
 						touch_info.px[i] = ev.tfinger.x*nativeWidth;
 						touch_info.py[i] = ev.tfinger.y*nativeHeight;
 						touch_info.pstatus[i] = TOUCH_STATUS_DOWN;
+
+            // migration for White Dragon's vibration logic from SDLActivity.java
+            if (is_touchpad_vibration_enabled() &&
+                is_touch_area(touch_info.px[i], touch_info.py[i]))
+            {
+              jniutils_vibrate_device();
+            }
+
 						break;
 					}
 				}
@@ -171,11 +190,12 @@ void getPads(Uint8* keystate, Uint8* keystate_def)
 				break;
 
 			case SDL_JOYBUTTONDOWN:
-				// FIXME: restore GP2X controls
 				for(i=0; i<JOY_LIST_TOTAL; i++)
 				{
-					if(ev.jbutton.which == i)
+					#ifndef OPENDINGUX
+					if (SDL_JoystickInstanceID(joystick[i]) == ev.jbutton.which)
 					{
+						//printf("Button down: controller %i, button %i\n", i, ev.jbutton.button);
 						lastjoy = 1 + i * JOY_MAX_INPUTS + ev.jbutton.button;
 
 						// add key flag from event
@@ -183,13 +203,15 @@ void getPads(Uint8* keystate, Uint8* keystate_def)
 						joysticks[i].Buttons |= 0x01 << ev.jbutton.button;
 						#endif*/
 					}
+					#endif
 				}
 				break;
 
 			case SDL_JOYHATMOTION:
 				for(i=0; i<JOY_LIST_TOTAL; i++)
 				{
-					if(ev.jhat.which == i)
+					#ifndef OPENDINGUX
+					if (SDL_JoystickInstanceID(joystick[i]) == ev.jhat.which)
 					{
 						int hatfirst = 1 + i * JOY_MAX_INPUTS + joysticks[i].NumButtons + 2*joysticks[i].NumAxes + 4*ev.jhat.hat;
 						x = (joysticks[i].Hats >> (4*ev.jhat.hat)) & 0x0F; // hat's previous state
@@ -207,13 +229,15 @@ void getPads(Uint8* keystate, Uint8* keystate_def)
 						if(ev.jhat.value & SDL_HAT_LEFT)    joysticks[i].Hats |= SDL_HAT_LEFT       << (ev.jhat.hat*4);
 						#endif
 					}
+					#endif
 				}
 				break;
 
 			case SDL_JOYAXISMOTION:
 				for(i=0; i<JOY_LIST_TOTAL; i++)
 				{
-					if(ev.jaxis.which == i)
+					#ifndef OPENDINGUX
+					if (SDL_JoystickInstanceID(joystick[i]) == ev.jaxis.which)
 					{
 						int axisfirst = 1 + i * JOY_MAX_INPUTS + joysticks[i].NumButtons + 2*ev.jaxis.axis;
 						x = (joysticks[i].Axes >> (2*ev.jaxis.axis)) & 0x03; // previous state of axis
@@ -227,10 +251,12 @@ void getPads(Uint8* keystate, Uint8* keystate_def)
                         if(ev.jaxis.value >    T_AXIS)  { joysticks[i].Axes |= 0x02 << (ev.jaxis.axis*2); }
                         #endif
 					}
+					#endif
 				}
 				break;
 
-            // PLUG AND PLAY
+#ifndef OPENDINGUX
+            PLUG AND PLAY no need for plug and play on opendingus
             case SDL_JOYDEVICEADDED:
                 if (ev.jdevice.which < JOY_LIST_TOTAL)
                 {
@@ -265,6 +291,9 @@ void getPads(Uint8* keystate, Uint8* keystate_def)
 
             default:
                 break;
+
+#endif
+
 		}
 
 	}
@@ -405,15 +434,20 @@ void open_joystick(int i)
     joysticks[i].NumButtons = SDL_JoystickNumButtons(joystick[i]);
 
     strcpy(joysticks[i].Name, SDL_JoystickName(i));
-
+    #ifndef OPENDINGUX
     joystick_haptic[i] = SDL_HapticOpenFromJoystick(joystick[i]);
+    #endif
+    #ifndef OPENDINGUX
     if (joystick_haptic[i] != NULL)
     {
         //Get initialize rumble
+        #ifndef OPENDINGUX
         if( SDL_HapticRumbleInit( joystick_haptic[i] ) < 0 )
         {
             printf("\nWarning: Unable to initialize rumble for joystick: %s in port: %d! SDL Error: %s\n", joysticks[i].Name, i, SDL_GetError());
         }
+        #endif
+
     }
 
     #if GP2X
@@ -432,6 +466,7 @@ void open_joystick(int i)
     #endif
 
     return;
+         #endif
 }
 
 void reset_joystick_map(int i)
@@ -469,9 +504,13 @@ Reset single joystick
 void close_joystick(int i)
 {
 	if(joystick[i] != NULL) SDL_JoystickClose(joystick[i]);
+	#ifndef OPENDINGUX
 	if(joystick_haptic[i] != NULL) SDL_HapticClose(joystick_haptic[i]);
+	#endif
 	joystick[i] = NULL;
+	#ifndef OPENDINGUX
 	joystick_haptic[i] = NULL;
+	#endif
 	reset_joystick_map(i);
 }
 
@@ -493,7 +532,9 @@ void control_init(int joy_enable)
 	for(i = 0; i < JOY_LIST_TOTAL; i++)
 	{
         joystick[i] = NULL;
+        #ifndef OPENDINGUX
         joystick_haptic[i] = NULL;
+        #endif
 		reset_joystick_map(i);
 	}
 	joystick_scan(usejoy);
@@ -936,13 +977,19 @@ void control_update(s_playercontrols ** playercontrols, int numplayers)
 
 void control_rumble(int port, int ratio, int msec)
 {
+
+#ifndef OPENDINGUX
     #if SDL
+
     if (joystick[port] != NULL && joystick_haptic[port] != NULL) {
+
         if(SDL_HapticRumblePlay(joystick_haptic[port], ratio, msec) != 0)
         {
             //printf( "Warning: Unable to play rumble! %s\n", SDL_GetError() );
         }
+        #endif
+     
     }
-    #endif
+#endif
 }
 

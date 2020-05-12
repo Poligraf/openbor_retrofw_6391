@@ -499,7 +499,7 @@ OBJS            = $(MAIN)                                                       
 #----------------------------------------------------------------------------------------------------
 
 CFLAGS 	       += $(addprefix -I", $(addsuffix ", $(INCS))) $(ARCHFLAGS) -D$(TARGET_PLATFORM)
-CFLAGS 	       += -g -Wall -Werror -fsigned-char -std=gnu99
+CFLAGS 	       += -g -Wall -Werror -fsigned-char -std=gnu99 -Wno-unused-variable -Wno-implicit-function-declaration
 
 
 ifndef BUILD_DARWIN

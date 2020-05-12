@@ -13,7 +13,9 @@
 #include "sdlport.h"
 
 static SDL_AudioSpec cspec;
+#ifndef OPENDINGUX
 static SDL_AudioDeviceID audio_dev;
+#endif
 static int sample_per_byte;
 static int voicevol = 15;
 static int buffsize = 4096;
@@ -28,6 +30,8 @@ static int started;
 
 int SB_playstart(int bits, int samplerate)
 {
+
+	#ifndef OPENDINGUX
 	SDL_AudioSpec spec;
 	spec.channels = 2;
 	spec.format = bits==16?AUDIO_S16SYS:AUDIO_U8;
@@ -46,12 +50,37 @@ int SB_playstart(int bits, int samplerate)
 
 	started = 1;
 	return 1;
+	#endif
+
+	#ifdef OPENDINGUX
+	SDL_AudioSpec spec;
+	spec.channels = 2;
+	spec.format = bits==16?AUDIO_S16SYS:AUDIO_U8;
+	spec.freq = samplerate;
+	sample_per_byte = 16/bits*spec.channels;
+	spec.samples = buffsize/sample_per_byte/2;
+	spec.userdata = NULL;
+	spec.callback = callback;
+
+	SDL_PauseAudio(1);
+	if (SDL_OpenAudio(&spec,&cspec)<0) return 0;
+	SDL_PauseAudio(0);
+
+	started = 1;
+	return 1;
+	#endif
 }
 
 void SB_playstop()
 {
-	//SDL_CloseAudio();
+		//SDL_CloseAudio();
+	#ifndef OPENDINGUX	
     SDL_CloseAudioDevice(audio_dev);
+    #endif
+
+    #ifdef OPENDINGUX
+    SDL_CloseAudio();
+    #endif
 }
 
 void SB_setvolume(char dev, char volume)
