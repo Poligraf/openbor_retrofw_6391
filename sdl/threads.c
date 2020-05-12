@@ -6,6 +6,7 @@
  * Copyright (c) 2004 - 2015 OpenBOR Team
  */
 
+#ifndef OPENDINGUX
 #include "sdlport.h"
 #include "SDL_thread.h"
 
@@ -70,3 +71,5 @@ int cond_wait_timed(bor_cond *cond, bor_mutex *mutex, int ms)
 {
 	return SDL_CondWaitTimeout(cond, mutex, ms);
 }
+
+#endif

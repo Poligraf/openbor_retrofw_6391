@@ -34049,7 +34049,7 @@ void update(int ingame, int usevwait)
  * error. */
 int set_color_correction(int gm, int br)
 {
-#if WII || SDL || VITA
+#if WII || SDL2 || VITA
     video_set_color_correction(gm, br);
     return 1;
 #else

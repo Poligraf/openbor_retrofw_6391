@@ -439,6 +439,7 @@ void vga_vwait(void)
 
 void vga_setpalette(unsigned char* palette)
 {
+	#ifndef OPENDINGUX
 	int i;
 	video_gl_setpalette(palette);
 	for(i=0;i<256;i++){
@@ -446,7 +447,9 @@ void vga_setpalette(unsigned char* palette)
 		colors[i].g=palette[1];
 		colors[i].b=palette[2];
 		palette+=3;
+
 	}
+	#endif
 	if(!opengl)
 	{
 #if SDL2
