@@ -1,0 +1,41 @@
+[33mcommit 824f8422f1023af505a095660eb2885ef8c1810c[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m, [m[1;31morigin/master[m[33m)[m
+Author: jovankrstik <jovan@mail2pharmacist.com>
+Date:   Tue May 12 21:41:56 2020 +1200
+
+    adding ipk
+
+[33mcommit d1a70d3fa287ba87dac744547e89a5285c8b9176[m
+Author: jovankrstik <jovan@mail2pharmacist.com>
+Date:   Tue May 12 21:02:10 2020 +1200
+
+    tested working
+
+[33mcommit fec25c4b1188df9d2e3babd614eb50383891f67e[m
+Author: jovankrstik <jovan@mail2pharmacist.com>
+Date:   Tue May 12 20:30:30 2020 +1200
+
+    cleaning up video
+
+[33mcommit 6cc9b57ae2056df2a085817a5f4669d042fbc3c6[m
+Author: jovankrstik <jovan@mail2pharmacist.com>
+Date:   Tue May 12 20:25:13 2020 +1200
+
+    fixing sdl2 to sdl1.2
+
+[33mcommit c1779a8b7c805b5713fe6c609010f064c49e9504[m
+Author: jovankrstik <jovan@mail2pharmacist.com>
+Date:   Tue May 12 20:10:31 2020 +1200
+
+    fixing sound
+
+[33mcommit 90c10fc8a29c8b3d27a7fe0a374c21abfed069f8[m
+Author: jovankrstik <jovan@mail2pharmacist.com>
+Date:   Tue May 12 20:05:17 2020 +1200
+
+    fixing typo
+
+[33mcommit 152d0ab58d8562e43929118bfa44b23d03b2edc6[m
+Author: jovankrstik <jovan@mail2pharmacist.com>
+Date:   Tue May 12 20:03:47 2020 +1200
+
+    changing makefile
