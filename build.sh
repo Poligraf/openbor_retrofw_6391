@@ -300,6 +300,7 @@ function opendingux {
 		  mv OpenBOR ./releases/OPENDINGUX/OpenBOR/OpenBOR.dge
 		  cp ./retrofw/default.retrofw.desktop ./releases/OPENDINGUX/OpenBOR/
 		  cp ./retrofw/openbor.png ./releases/OPENDINGUX/OpenBOR/
+		  cp ./retrofw/ob.sh ./releases/OPENDINGUX/OpenBOR/
 		  cp ./retrofw/readme.retrofw.txt ./releases/OPENDINGUX/OpenBOR/
 		  mksquashfs ./releases/OPENDINGUX/OpenBOR/ ./releases/OPENDINGUX/OpenBOR.opk -all-root -noappend -no-exports -no-xattrs
 		fi    
