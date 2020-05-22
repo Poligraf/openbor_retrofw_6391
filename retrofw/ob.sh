@@ -1,7 +1,3 @@
-#! /bin/sh
-
-echo "Loading $1";
-
 #!/bin/bash
 
 mkdir -p $HOME/games/OpenBOR/Logs&&
