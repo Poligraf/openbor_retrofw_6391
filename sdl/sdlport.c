@@ -22,6 +22,8 @@
 #undef main
 #endif
 
+
+
 char packfile[MAX_FILENAME_LEN] = {"bor.pak"};
 #if ANDROID
 #include <unistd.h>
@@ -29,10 +31,10 @@ char rootDir[MAX_BUFFER_LEN] = {""};
 #endif
 
 #if GCW0
-char paksDir[256] = {"/home/retrofw/games/openbor/Paks"};
-char savesDir[256] = {"/home/retrofw/games/openbor/Saves"};
-char logsDir[256] = {"/home/retrofw/games/openbor/Logs"};
-char screenShotsDir[256] = {"/home/retrofw/games/openbor/ScreenShots"};
+char paksDir[MAX_FILENAME_LEN] = {"/home/retrofw/games/openbor/Paks"};
+char savesDir[MAX_FILENAME_LEN] = {"/home/retrofw/games/openbor/Saves"};
+char logsDir[MAX_FILENAME_LEN] = {"/home/retrofw/games/openbor/Logs"};
+char screenShotsDir[MAX_FILENAME_LEN] = {"/home/retrofw/games/openbor/ScreenShots"};
 #else
 
 char paksDir[MAX_FILENAME_LEN] = {"Paks"};

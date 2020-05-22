@@ -20,8 +20,20 @@
 #include "openbor.h"
 #include "packfile.h"
 
-#if !DC && !VITA
+
+
+#if PSP || WIN || LINUX || GP2X || OPENDINGUX || SYMBIAN
 #include <dirent.h>
+#endif
+
+#if GP2X || LINUX || OPENDINGUX
+#include <sys/stat.h>
+#endif
+
+#ifdef DOS
+#include <direct.h>
+#include "dosport.h"
+#include "savepng.h"
 #endif
 
 #ifdef SDL
@@ -30,44 +42,29 @@
 #include "savepng.h"
 #endif
 
-#if _POSIX_VERSION > 0
-#include <sys/stat.h>
-#endif
-
 #ifdef DC
 #include "dcport.h"
+#endif
+
+#ifdef XBOX
+#include "xboxport.h"
+#include "savepng.h"
 #endif
 
 #ifdef PSP
 #include "image.h"
 #endif
 
-#if WII
+
+#if WII && !SDL
 #include "wiiport.h"
 #include "savepng.h"
 #endif
 
-#if VITA
-#include "vitaport.h"
-#include "savepng.h"
-#include <sys/stat.h>
-#include <psp2/io/dirent.h>
-typedef void DIR;
-#define opendir(X) ((DIR*)sceIoDopen(X))
-#define closedir(X) sceIoDclose((SceUID)(X))
-#endif
-
-#if ANDROID
-#include "sdlport.h"
-#include "savepng.h"
-#endif
-
-#ifdef WIN
-#define MKDIR(x) mkdir(x)
-#elif VITA
-#define MKDIR(x) sceIoMkdir(x, 0777)
-#else
+#if PSP || GP2X || LINUX || OPENDINGUX || WII || SYMBIAN
 #define MKDIR(x) mkdir(x, 0777)
+#else
+#define MKDIR(x) mkdir(x)
 #endif
 
 #ifdef WII
