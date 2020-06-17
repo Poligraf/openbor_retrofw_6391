@@ -1,0 +1,11 @@
+[Desktop Entry]
+Name=OpenBOR
+Comment=OpenBOR Engine r6391
+Exec=OpenBOR.dge
+Terminal=false
+Type=Application
+StartupNotify=true
+Icon=openbor
+Categories=games
+X-OD-Manual=readme.retrofw.txt
+X-OD-NeedsDownscaling=true
