@@ -297,10 +297,10 @@ function opendingux {
 			mkdir ./releases/OPENDINGUX/OpenBOR
 		  fi
 		  rm ./releases/OPENDINGUX/OpenBOR.opk
-		  mv OpenBOR ./releases/OPENDINGUX/OpenBOR/
-		  cp ./gcw0/default.gcw0.desktop ./releases/OPENDINGUX/OpenBOR/
-		  cp ./gcw0/openbor.png ./releases/OPENDINGUX/OpenBOR/
-		  cp ./gcw0/readme.gcw0.txt ./releases/OPENDINGUX/OpenBOR/
+		  mv OpenBOR ./releases/OPENDINGUX/OpenBOR/OpenBOR.dge
+		  cp ./retrofw/default.retrofw.desktop ./releases/OPENDINGUX/OpenBOR/
+		  cp ./retrofw/openbor.png ./releases/OPENDINGUX/OpenBOR/
+		  cp ./retrofw/readme.retrofw.txt ./releases/OPENDINGUX/OpenBOR/
 		  mksquashfs ./releases/OPENDINGUX/OpenBOR/ ./releases/OPENDINGUX/OpenBOR.opk -all-root -noappend -no-exports -no-xattrs
 		fi    
     else

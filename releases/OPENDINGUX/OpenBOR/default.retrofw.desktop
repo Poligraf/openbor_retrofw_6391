@@ -2,7 +2,7 @@
 Name=OpenBOR
 Comment=OpenBOR Engine r6391
 Exec=OpenBOR.dge
-Terminal=true
+Terminal=false
 Type=Application
 StartupNotify=true
 Icon=openbor
