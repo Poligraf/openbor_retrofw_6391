@@ -51,9 +51,9 @@ void borExit(int reset);
 void openborMain(int argc, char** argv);
 
 extern char packfile[MAX_FILENAME_LEN];
-extern char paksDir[MAX_FILENAME_LEN];
-extern char savesDir[MAX_FILENAME_LEN];
-extern char logsDir[MAX_FILENAME_LEN];
-extern char screenShotsDir[MAX_FILENAME_LEN];
+extern char paksDir[256];
+extern char savesDir[256];
+extern char logsDir[256];
+extern char screenShotsDir[256];
 
 #endif

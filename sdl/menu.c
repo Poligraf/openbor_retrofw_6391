@@ -174,7 +174,13 @@ static int findPaks(void)
 	int i = 0;
 	DIR* dp = NULL;
 	struct dirent* ds;
+	#ifdef WII
+	dp = opendir("sd:/apps/OpenBOR/Paks");
+	#elif GCW0
+	dp = opendir("/home/retrofw/games/openbor/Paks");
+	#else
 	dp = opendir(paksDir);
+	#endif
 	if(dp != NULL)
    	{
 		while((ds = readdir(dp)) != NULL)

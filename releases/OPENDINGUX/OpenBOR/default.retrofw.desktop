@@ -8,4 +8,4 @@ StartupNotify=true
 Icon=openbor
 Categories=games
 X-OD-Manual=readme.retrofw.txt
-X-OD-NeedsDownscaling=true
+
