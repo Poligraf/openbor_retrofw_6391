@@ -2446,7 +2446,7 @@ void clearsettings()
     savedata.uselog = 1;
     savedata.debuginfo = 0;
     savedata.fullscreen = 0;
-	
+
 	#if WII
     savedata.stretch = 1;
 	#else
@@ -36624,7 +36624,7 @@ readfile:
     }
 
 #if OPENDINGUX || GP2X
-    videoMode = 0;
+    // videoMode = 1;
 #endif
 
 #if SYMBIAN

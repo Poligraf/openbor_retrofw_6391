@@ -34,7 +34,7 @@ case $1 in
 #                           PSP Environment                                #
 #                                                                          #
 ############################################################################
-1) 
+1)
    if test -e "C:/pspsdk"; then
      export PSPDEV=C:/pspsdk
      export PATH=$PATH:$PSPDEV/bin
@@ -240,7 +240,7 @@ case $1 in
      fi
      HOST_PLATFORM="SVN";
      export PATH=$TOOLS
-     . ../tools/dc-sdk/kos/environ.sh     
+     . ../tools/dc-sdk/kos/environ.sh
    fi
    if test $KOS_BASE; then
      echo "-------------------------------------------------------"
@@ -307,8 +307,8 @@ case $1 in
      export OPENDINGUX_TOOLCHAIN_PREFIX=$OPENDINGUX_TOOLCHAIN/usr
      export PATH=$PATH:$OPENDINGUX_TOOLCHAIN/usr/bin
    elif test -e "/opt/mipsel-linux-uclibc"; then
-     export OPENDINGUX_TOOLCHAIN=/opt/mipsel-linux-uclibc
-     export OPENDINGUX_TOOLCHAIN_PREFIX=/opt/mipsel-linux-uclibc/mipsel-buildroot-linux-uclibc/sysroot/usr
+     export OPENDINGUX_TOOLCHAIN=/run/media/raboten/c03df044-bb85-4f9c-a53f-e537b8a024a0/mipsel-linux-uclibc/
+     export OPENDINGUX_TOOLCHAIN_PREFIX=/run/media/raboten/c03df044-bb85-4f9c-a53f-e537b8a024a0/mipsel-linux-uclibc/mipsel-buildroot-linux-uclibc/sysroot/usr
      export PATH=$PATH:$OPENDINGUX_TOOLCHAIN/usr/bin
      export BUILD_GCW0=1
    fi
@@ -323,7 +323,7 @@ case $1 in
      echo "-------------------------------------------------------"
    fi
    ;;
-   
+
 ############################################################################
 #                                                                          #
 #                             WIZ Environment                              #
@@ -405,7 +405,7 @@ case $1 in
    echo
    echo "-------------------------------------------------------"
    echo "   1 = PSP"
-   echo "   2 = (Not Used)"   
+   echo "   2 = (Not Used)"
    echo "   3 = Gp2x"
    echo "   4 = Linux"
    echo "   5 = Windows"

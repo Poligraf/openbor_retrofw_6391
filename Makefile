@@ -49,8 +49,8 @@ BUILD_PTHREAD   = 1
 BUILD_SDL_IO_OPENDINGUX    = 1
 BUILD_TREMOR    = 1
 BUILDING        = 1
-CC              = /opt/mipsel-linux-uclibc/bin/mipsel-linux-gcc
-INCLUDES        = /opt/mipsel-linux-uclibc/usr/mipsel-buildroot-linux-uclibc/sysroot/usr/include/SDL/ ./source/webmlib/
+CC              = /run/media/raboten/c03df044-bb85-4f9c-a53f-e537b8a024a0/mipsel-linux-uclibc//bin/mipsel-linux-gcc
+INCLUDES        = /run/media/raboten/c03df044-bb85-4f9c-a53f-e537b8a024a0/mipsel-linux-uclibc//usr/mipsel-buildroot-linux-uclibc/sysroot/usr/include/SDL/ ./source/webmlib/
 LIBRARIES       = 
 ifeq ($(BUILD_OPENDINGUX), 0)
 BUILD_DEBUG     = 1
@@ -217,7 +217,7 @@ endif
 
 ifdef BUILD_OPENDINGUX
 
-STRIP           = /opt/mipsel-linux-uclibc//bin/mipsel-linux-strip $(TARGET) -o $(TARGET_FINAL)
+STRIP           = /run/media/raboten/c03df044-bb85-4f9c-a53f-e537b8a024a0/mipsel-linux-uclibc///bin/mipsel-linux-strip $(TARGET) -o $(TARGET_FINAL)
 endif
 
 

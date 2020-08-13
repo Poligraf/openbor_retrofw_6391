@@ -31,12 +31,12 @@ int video_set_mode(s_videomodes videomodes)
 	height = videomodes.vRes;
 	if(videomodes.hRes==480) mode = 1;
 	if(screen) SDL_FreeSurface(screen);
-	screen = SDL_SetVideoMode(mode?640:width,mode?480:height,8*bpp,SDL_HWSURFACE|SDL_DOUBLEBUF|SDL_FULLSCREEN);
+	screen = SDL_SetVideoMode(mode?640:width,mode?480:height,8*bpp,SDL_HWSURFACE|SDL_TRIPLEBUF|SDL_FULLSCREEN);
 	if(screen==NULL) return 0;
 	if(bpp>1)
 	{
 		if(surface) SDL_FreeSurface(surface);
-		surface = SDL_AllocSurface(SDL_SWSURFACE, videomodes.hRes, videomodes.vRes, 8*bpp, masks[bpp-1][0], masks[bpp-1][1], masks[bpp-1][2], masks[bpp-1][3]);
+		surface = SDL_AllocSurface(SDL_HWSURFACE, videomodes.hRes, videomodes.vRes, 8*bpp, masks[bpp-1][0], masks[bpp-1][1], masks[bpp-1][2], masks[bpp-1][3]);
 		if(surface==NULL) return 0;
 	}
 	video_clearscreen();

@@ -187,9 +187,9 @@ SDL_Surface* SetVideoMode(int w, int h, int bpp, bool gl)
 	if(gl) return NULL;
 	else return SDL_CreateRGBSurface(0, w, h, bpp, masks[bpp/8-1][2], masks[bpp/8-1][1], masks[bpp/8-1][0], masks[bpp/8-1][3]);
 #elif defined(OPENDINGUX)
-	return SDL_SetVideoMode(w, h, bpp, savedata.fullscreen?(SDL_HWSURFACE|SDL_DOUBLEBUF|SDL_FULLSCREEN):(SDL_HWSURFACE|SDL_DOUBLEBUF));
+	return SDL_SetVideoMode(w, h, bpp, savedata.fullscreen?(SDL_HWSURFACE|SDL_TRIPLEBUF|SDL_FULLSCREEN):(SDL_HWSURFACE|SDL_TRIPLEBUF));
 #else
-	return SDL_SetVideoMode(w, h, bpp, savedata.fullscreen?(SDL_SWSURFACE|SDL_DOUBLEBUF|SDL_FULLSCREEN):(SDL_SWSURFACE|SDL_DOUBLEBUF));
+	return SDL_SetVideoMode(w, h, bpp, savedata.fullscreen?(SDL_SWSURFACE|SDL_TRIPLEBUF|SDL_FULLSCREEN):(SDL_SWSURFACE|SDL_TRIPLEBUF));
 #endif
 }
 
