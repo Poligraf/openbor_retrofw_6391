@@ -36624,7 +36624,10 @@ readfile:
     }
 
 #if OPENDINGUX || GP2X
-    // videoMode = 1;
+if(videoMode != 0 && videoMode != 1 && videoMode != 2 && videoMode != 3  && videoMode != 4)
+{
+    videoMode = 2;
+}
 #endif
 
 #if SYMBIAN

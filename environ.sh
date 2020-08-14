@@ -306,7 +306,7 @@ case $1 in
      export OPENDINGUX_TOOLCHAIN=/opt/opendingux-toolchain
      export OPENDINGUX_TOOLCHAIN_PREFIX=$OPENDINGUX_TOOLCHAIN/usr
      export PATH=$PATH:$OPENDINGUX_TOOLCHAIN/usr/bin
-   elif test -e "/opt/mipsel-linux-uclibc"; then
+   elif test -e "/run/media/raboten/c03df044-bb85-4f9c-a53f-e537b8a024a0/mipsel-linux-uclibc/"; then
      export OPENDINGUX_TOOLCHAIN=/run/media/raboten/c03df044-bb85-4f9c-a53f-e537b8a024a0/mipsel-linux-uclibc/
      export OPENDINGUX_TOOLCHAIN_PREFIX=/run/media/raboten/c03df044-bb85-4f9c-a53f-e537b8a024a0/mipsel-linux-uclibc/mipsel-buildroot-linux-uclibc/sysroot/usr
      export PATH=$PATH:$OPENDINGUX_TOOLCHAIN/usr/bin
