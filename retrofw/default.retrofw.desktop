@@ -1,7 +1,7 @@
 [Desktop Entry]
 Name=OpenBOR
 Comment=OpenBOR Engine r6391
-Exec=ob.sh
+Exec=./ob.dge
 Terminal=true
 Type=Application
 StartupNotify=true
