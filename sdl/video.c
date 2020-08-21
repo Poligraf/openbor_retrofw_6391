@@ -189,7 +189,7 @@ SDL_Surface* SetVideoMode(int w, int h, int bpp, bool gl)
 #elif defined(OPENDINGUX)
 	return SDL_SetVideoMode(w, h, bpp, savedata.fullscreen?(SDL_HWSURFACE|SDL_TRIPLEBUF|SDL_FULLSCREEN):(SDL_HWSURFACE|SDL_TRIPLEBUF));
 #else
-	return SDL_SetVideoMode(w, h, bpp, savedata.fullscreen?(SDL_SWSURFACE|SDL_TRIPLEBUF|SDL_FULLSCREEN):(SDL_SWSURFACE|SDL_TRIPLEBUF));
+	return SDL_SetVideoMode(w, h, bpp, savedata.fullscreen?(SDL_HWSURFACE|SDL_TRIPLEBUF|SDL_FULLSCREEN):(SDL_SWSURFACE|SDL_TRIPLEBUF));
 #endif
 }
 
@@ -222,7 +222,7 @@ int video_set_mode(s_videomodes videomodes)
 		screen = SetVideoMode(videomodes.hRes*savedata.screen[videoMode][0], videomodes.vRes*savedata.screen[videoMode][0], 16, false);
 		SDL_ShowCursor(SDL_DISABLE);
 		bscreen = SDL_CreateRGBSurface(SDL_SWSURFACE, videomodes.hRes, videomodes.vRes, 8*bytes_per_pixel, masks[bytes_per_pixel-1][0], masks[bytes_per_pixel-1][1], masks[bytes_per_pixel-1][2], masks[bytes_per_pixel-1][3]); // 24bit mask
-		bscreen2 = SDL_CreateRGBSurface(SDL_SWSURFACE, videomodes.hRes+4, videomodes.vRes+8, 16, masks[1][2], masks[1][1], masks[1][0], masks[1][3]);
+		bscreen2 = SDL_CreateRGBSurface(SDL_HWSURFACE, videomodes.hRes+4, videomodes.vRes+8, 16, masks[1][2], masks[1][1], masks[1][0], masks[1][3]);
 		Init_Gfx(565, 16);
 		memset(pDeltaBuffer, 0x00, 1244160);
 		if(bscreen==NULL || bscreen2==NULL) return 0;
@@ -231,7 +231,7 @@ int video_set_mode(s_videomodes videomodes)
 	{
 		if(bytes_per_pixel>1)
 		{
-			bscreen = SDL_CreateRGBSurface(SDL_SWSURFACE, videomodes.hRes, videomodes.vRes, 8*bytes_per_pixel, masks[bytes_per_pixel-1][0], masks[bytes_per_pixel-1][1], masks[bytes_per_pixel-1][2], masks[bytes_per_pixel-1][3]); // 24bit mask
+			bscreen = SDL_CreateRGBSurface(SDL_HWSURFACE, videomodes.hRes, videomodes.vRes, 8*bytes_per_pixel, masks[bytes_per_pixel-1][0], masks[bytes_per_pixel-1][1], masks[bytes_per_pixel-1][2], masks[bytes_per_pixel-1][3]); // 24bit mask
 			if(!bscreen) return 0;
 		}
 		screen = SetVideoMode(videomodes.hRes, videomodes.vRes, 8*bytes_per_pixel, false);
