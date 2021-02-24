@@ -477,7 +477,7 @@ CFLAGS             += -D_REENTRANT -DOPENDINGUX -DGCW0 -O3 -fomit-frame-pointer 
 											-fstrict-aliasing  -fexpensive-optimizations  \
 											-finline -finline-functions -fpeel-loops \
 											-mips32 -mtune=mips32 -mno-mips16 -mno-shared -mbranch-likely -pipe \
-									 		-fprofile-use -fprofile-dir=./profile
+									 		# -fprofile-use -fprofile-dir=./profile
 else
 CFLAGS             += -D_REENTRANT -DOPENDINGUX -DGCW0 -O3 -fomit-frame-pointer -ffunction-sections -ffast-math  -G0 -mbranch-likely -fcommon \
 											-falign-functions -falign-labels -falign-loops -falign-jumps \
@@ -486,7 +486,7 @@ CFLAGS             += -D_REENTRANT -DOPENDINGUX -DGCW0 -O3 -fomit-frame-pointer 
 											-fstrict-aliasing  -fexpensive-optimizations  \
 											-finline -finline-functions -fpeel-loops \
 											-mips32 -mtune=mips32 -mno-mips16 -mno-shared -mbranch-likely -pipe \
-									 		-fprofile-use -fprofile-dir=./profile
+									 		# -fprofile-use -fprofile-dir=./profile
 endif
 endif
 

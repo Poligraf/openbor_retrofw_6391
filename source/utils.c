@@ -83,7 +83,7 @@
 #define COPY_PAKS_PATH(buf, name) strcpy(buf, "ux0:/data/OpenBOR/Paks/"); strcat(buf, name);
 
 
-// 
+//
 // #elif GCW0
 // #define CHECK_LOGFILE(type)  type ? fileExists("/home/retrofw/games/openbor/Logs/OpenBorLog.txt") : fileExists("/usr/local/home/.OpenBOR/Logs/ScriptLog.txt")
 // #define OPEN_LOGFILE(type)   type ? fopen("/home/retrofw/games/openbor/Logs/OpenBorLog.txt", "wt") : fopen("/usr/local/home/.OpenBOR/Logs/ScriptLog.txt", "wt")
@@ -104,10 +104,10 @@
 #define COPY_ROOT_PATH(buf, name) strncpy(buf, rootDir, strlen(rootDir)); strncat(buf, name, strlen(name)); strncat(buf, "/", 1);
 #define COPY_PAKS_PATH(buf, name) strncpy(buf, paksDir, strlen(paksDir)); strncat(buf, "/", 1); strncat(buf, name, strlen(name));
 #else
-#define CHECK_LOGFILE(type)  type ? fileExists("./Logs/OpenBorLog.txt") : fileExists("./Logs/ScriptLog.txt")
-#define OPEN_LOGFILE(type)   type ? fopen("./Logs/OpenBorLog.txt", "wt") : fopen("./Logs/ScriptLog.txt", "wt")
-#define APPEND_LOGFILE(type) type ? fopen("./Logs/OpenBorLog.txt", "at") : fopen("./Logs/ScriptLog.txt", "at")
-#define READ_LOGFILE(type)   type ? fopen("./Logs/OpenBorLog.txt", "rt") : fopen("./Logs/ScriptLog.txt", "rt")
+// #define CHECK_LOGFILE(type)  type ? fileExists("./Logs/OpenBorLog.txt") : fileExists("./Logs/ScriptLog.txt")
+// #define OPEN_LOGFILE(type)   type ? fopen("./Logs/OpenBorLog.txt", "wt") : fopen("./Logs/ScriptLog.txt", "wt")
+// #define APPEND_LOGFILE(type) type ? fopen("./Logs/OpenBorLog.txt", "at") : fopen("./Logs/ScriptLog.txt", "at")
+// #define READ_LOGFILE(type)   type ? fopen("./Logs/OpenBorLog.txt", "rt") : fopen("./Logs/ScriptLog.txt", "rt")
 #define COPY_ROOT_PATH(buf, name) strcpy(buf, "./"); strcat(buf, name); strcat(buf, "/");
 #define COPY_PAKS_PATH(buf, name) strcpy(buf, "./Paks/"); strcat(buf, name);
 #endif
@@ -226,7 +226,7 @@ stringptr *readFromLogFile(int which)
     long  size;
     FILE *handle = NULL;
     stringptr *buffer = NULL;
-    handle = READ_LOGFILE((which ? OPENBOR_LOG : SCRIPT_LOG));
+    // handle = READ_LOGFILE((which ? OPENBOR_LOG : SCRIPT_LOG));
     if(handle == NULL)
     {
         return NULL;
@@ -264,7 +264,7 @@ void writeToLogFile(const char *msg, ...)
 #else
     if(openborLog == NULL)
     {
-        openborLog = OPEN_LOGFILE(OPENBOR_LOG);
+        // openborLog = OPEN_LOGFILE(OPENBOR_LOG);
         if(openborLog == NULL)
         {
             return;
@@ -279,18 +279,18 @@ void writeToLogFile(const char *msg, ...)
 
 void writeToScriptLog(const char *msg)
 {
-#ifndef DC
-    if(scriptLog == NULL)
-    {
-        scriptLog = OPEN_LOGFILE(SCRIPT_LOG);
-        if(scriptLog == NULL)
-        {
-            return;
-        }
-    }
-    fwrite(msg, 1, strlen(msg), scriptLog);
-    fflush(scriptLog);
-#endif
+// #ifndef DC
+//     if(scriptLog == NULL)
+//     {
+//         scriptLog = OPEN_LOGFILE(SCRIPT_LOG);
+//         if(scriptLog == NULL)
+//         {
+//             return;
+//         }
+//     }
+//     fwrite(msg, 1, strlen(msg), scriptLog);
+//     fflush(scriptLog);
+// #endif
 }
 
 void debug_printf(char *format, ...)
