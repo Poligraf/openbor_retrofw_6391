@@ -36623,19 +36623,19 @@ readfile:
         buf = NULL;
     }
 
-#if OPENDINGUX || GP2X
-// if(videoMode != 0 && videoMode != 2)
-// {
-//     videoMode = 0;
-// }
-#endif
 
-#if SYMBIAN
-    if(videoMode != 0 && videoMode != 2)
-    {
-        videoMode = 0;
-    }
-#endif
+if(videomodes.vRes == 480 && videomodes.hRes > 800)
+{
+    videoMode = 4;
+}
+
+
+if(videomodes.vRes == 600 && videomodes.hRes > 800)
+{
+    videoMode = 5;
+}
+
+
 
 VIDEOMODES:
     videomodes.mode    = videoMode;

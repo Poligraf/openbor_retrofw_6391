@@ -49,9 +49,10 @@ BUILD_PTHREAD   = 1
 BUILD_SDL_IO_OPENDINGUX    = 1
 BUILD_TREMOR    = 1
 BUILDING        = 1
-CC              = /run/media/raboten/c03df044-bb85-4f9c-a53f-e537b8a024a0/mipsel-linux-uclibc//bin/mipsel-linux-gcc
-INCLUDES        = /run/media/raboten/c03df044-bb85-4f9c-a53f-e537b8a024a0/mipsel-linux-uclibc//usr/mipsel-buildroot-linux-uclibc/sysroot/usr/include/SDL/ ./source/webmlib/
-LIBRARIES       = 
+BUILD_GCW0=1
+CC              = mipsel-linux-gcc
+INCLUDES        = /opt/rs97tools/mipsel-RetroFW-linux-uclibc/sysroot/usr/include/SDL/ ./source/webmlib/
+LIBRARIES       =
 ifeq ($(BUILD_OPENDINGUX), 0)
 BUILD_DEBUG     = 1
 endif
@@ -217,7 +218,7 @@ endif
 
 ifdef BUILD_OPENDINGUX
 
-STRIP           = /run/media/raboten/c03df044-bb85-4f9c-a53f-e537b8a024a0/mipsel-linux-uclibc///bin/mipsel-linux-strip $(TARGET) -o $(TARGET_FINAL)
+STRIP           = mipsel-linux-strip $(TARGET) -o $(TARGET_FINAL)
 endif
 
 
@@ -262,7 +263,7 @@ endif
 
 
 ifdef BUILD_OPENDINGUX
-INCS           += '$(OPENDINGUX_TOOLCHAIN_PREFIX)/bin/libpng-config --prefix'/include/libpng
+INCS           += 'libpng-config --prefix'/include/libpng
 endif
 
 ifdef BUILD_LINUX
@@ -469,9 +470,23 @@ endif
 
 ifdef BUILD_OPENDINGUX
 ifeq ($(BUILD_GCW0), 1)
-CFLAGS             += -D_REENTRANT -DOPENDINGUX -DGCW0 -O3 -fomit-frame-pointer -ffunction-sections -ffast-math  -G0 -mbranch-likely
+CFLAGS             += -D_REENTRANT -DOPENDINGUX -DGCW0 -O3 -fomit-frame-pointer -ffunction-sections -ffast-math  -G0 -mbranch-likely -fcommon \
+											-falign-functions -falign-labels -falign-loops -falign-jumps \
+											-ffast-math -fsingle-precision-constant -funsafe-math-optimizations \
+											-fomit-frame-pointer -fno-builtin -fno-exceptions \
+											-fstrict-aliasing  -fexpensive-optimizations  \
+											-finline -finline-functions -fpeel-loops \
+											-mips32 -mtune=mips32 -mno-mips16 -mno-shared -mbranch-likely -pipe \
+									 		-fprofile-use -fprofile-dir=./profile
 else
-CFLAGS             += -D_REENTRANT -DOPENDINGUX -O3 -fomit-frame-pointer -ffunction-sections -ffast-math  -G0 -mbranch-likely
+CFLAGS             += -D_REENTRANT -DOPENDINGUX -DGCW0 -O3 -fomit-frame-pointer -ffunction-sections -ffast-math  -G0 -mbranch-likely -fcommon \
+											-falign-functions -falign-labels -falign-loops -falign-jumps \
+											-ffast-math -fsingle-precision-constant -funsafe-math-optimizations \
+											-fomit-frame-pointer -fno-builtin -fno-exceptions \
+											-fstrict-aliasing  -fexpensive-optimizations  \
+											-finline -finline-functions -fpeel-loops \
+											-mips32 -mtune=mips32 -mno-mips16 -mno-shared -mbranch-likely -pipe \
+									 		-fprofile-use -fprofile-dir=./profile
 endif
 endif
 
@@ -499,7 +514,7 @@ OBJS            = $(MAIN)                                                       
 #----------------------------------------------------------------------------------------------------
 
 CFLAGS 	       += $(addprefix -I", $(addsuffix ", $(INCS))) $(ARCHFLAGS) -D$(TARGET_PLATFORM)
-CFLAGS 	       += -g -Wall -Werror -fsigned-char -std=gnu99 -Wno-unused-variable -Wno-implicit-function-declaration
+CFLAGS 	       += -g  -fsigned-char -std=gnu99 -Wno-lto-type-mismatch -Wno-unused-variable -Wno-implicit-function-declaration -Wno-error=overflow -Wno-overflow -Wno-error=coverage-mismatch
 
 
 ifndef BUILD_DARWIN
@@ -592,7 +607,7 @@ CFLAGS 	       += -DWEBM
 endif
 
 
-CXXFLAGS        = $(CFLAGS) -fno-exceptions -fno-rtti
+CXXFLAGS        = $(CFLAGS) -fpermissive -fno-exceptions -fno-rtti -fno-math-errno -fno-threadsafe-statics
 ASFLAGS         = $(CFLAGS)
 
 #----------------------------------------------------------------------------------------------------
@@ -821,4 +836,3 @@ version:
 	@echo
 	@echo "Copyright (c) 2004 - 2018 OpenBOR Team"
 	@echo "-------------------------------------------------------"
-
