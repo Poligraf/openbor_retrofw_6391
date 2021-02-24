@@ -1,0 +1,291 @@
+Total Ram: 29933568 Bytes
+ Free Ram: 90542080 Bytes
+ Used Ram: 18446744073648943104 Bytes
+
+debug:nativeWidth, nativeHeight, bpp  320, 240, 16
+OpenBoR v3.0 Build 21, Compile Date: Feb 21 2021
+
+Game Selected: /home/retrofw/games/openbor/Paks/he-man.pak
+
+FileCaching System Init......	Enabled
+Initializing video............
+Reading video settings from 'data/video.txt'.
+
+Colordepth is depreciated. All modules are displayed with a 32bit color screen.
+
+
+Using debug video mode: 960 x 480
+Initialized video.............	960x480 (Mode: 255)
+
+Loading menu.txt.............	Done!
+Loading fonts................	1 2 3 4 Done!
+Timer init...................	Done!
+Initialize Sound..............	
+Loading sprites..............	Done!
+Loading level order..........	Done!
+Loading model constants......	Done!
+Loading script settings......	Done!
+Loading scripts..............	Done!
+Loading models...............
+
+Cacheing 'flash' from data/sprites/flash.txt
+Cacheing 'Flash2' from data/sprites/flash2.txt
+Cacheing 'boom' from data/sprites/boom.txt
+Cacheing 'dust' from data/sprites/dust.txt
+Cacheing 'delay' from data/sprites/delay.txt
+Cacheing 'carw' from data/sprites/carw.txt
+Cacheing 'he-man' from data/chars/heman/heman.txt
+Cacheing 'hrock' from data/chars/heman/hrock.txt
+Cacheing 'he-man_' from data/chars/heman/heman_.txt
+Cacheing 'he-man__' from data/chars/heman/heman__.txt
+Cacheing 'she-ra' from data/chars/shera/shera.txt
+Cacheing 'sheraw' from data/chars/shera/sheraw.txt
+Cacheing 'she-ra_' from data/chars/shera/shera_.txt
+Cacheing 'swind' from data/chars/shera/swind.txt
+Cacheing 'swinw' from data/chars/shera/swinw.txt
+Cacheing 'shro' from data/chars/shera/shro.txt
+Cacheing 'battlecat' from data/chars/bcat/bcatp.txt
+Cacheing 'man-at-arms' from data/chars/manat/manat.txt
+Cacheing 'man-at-arms_' from data/chars/manat/manat_.txt
+Cacheing 'mro' from data/chars/manat/mro.txt
+Cacheing 'teela' from data/chars/teela/teela.txt
+Cacheing 'teela_' from data/chars/teela/teela_.txt
+Cacheing 'tfly' from data/chars/teela/tfly.txt
+Cacheing 'tro' from data/chars/teela/tro.txt
+Cacheing 'swort' from data/chars/teela/swort.txt
+Cacheing 'ram-man' from data/chars/rama/rama.txt
+Cacheing 'ram-man_' from data/chars/rama/rama_.txt
+Cacheing 'rro' from data/chars/rama/rro.txt
+Cacheing 'orko' from data/chars/orko/orko.txt
+Cacheing 'orko_' from data/chars/orko/orko_.txt
+Cacheing 'oro' from data/chars/orko/oro.txt
+Cacheing 'sorceress' from data/chars/sorce/sorce.txt
+Cacheing 'sorceress_' from data/chars/sorce/sorce_.txt
+Cacheing 'sorceress__' from data/chars/sorce/sorce__.txt
+Cacheing 'sro' from data/chars/sorce/sro.txt
+Cacheing 'evil-lyn' from data/chars/evel/evel.txt
+Cacheing 'evil-lyn_' from data/chars/evel/evel_.txt
+Cacheing 'evil-lyn__' from data/chars/evel/evel__.txt
+Cacheing 'efly' from data/chars/evel/efly.txt
+Cacheing 'evelu' from data/chars/evel/evelu.txt
+Cacheing 'evro' from data/chars/evel/evro.txt
+Cacheing 'skeletor' from data/chars/skele/skele.txt
+Cacheing 'skeletor_' from data/chars/skele/skele_.txt
+Cacheing 'sfly' from data/chars/skele/sfly.txt
+Cacheing 'skelo' from data/chars/skele/skelo.txt
+Cacheing 'srock' from data/chars/skele/srock.txt
+Cacheing 'panthor' from data/chars/pcat/pcatp.txt
+Cacheing 'pcat' from data/chars/pcat/pcat.txt
+Cacheing 'pcatw' from data/chars/pcat/pcatw.txt
+Cacheing 'pcath' from data/chars/pcat/pcath.txt
+Cacheing 'pcatr' from data/chars/pcat/pcatr.txt
+Cacheing 'hcatp' from data/chars/skele/hcatp.txt
+Cacheing 'lion-o' from data/chars/liono/liono.txt
+Cacheing 'lion-o_' from data/chars/liono/liono_.txt
+Cacheing 'liro' from data/chars/liono/liro.txt
+Cacheing 'lfly' from data/chars/liono/lfly.txt
+Cacheing 'rfly' from data/chars/rama/rfly.txt
+Cacheing 'mfly' from data/chars/manat/mfly.txt
+Cacheing 'zoari' from data/chars/sorce/zoari.txt
+Cacheing 'zoar' from data/chars/sorce/zoar.txt
+Cacheing 'ofly' from data/chars/orko/ofly.txt
+Cacheing 'spark' from data/sprites/spark.txt
+Cacheing 'ban' from data/sprites/ban.txt
+Cacheing 'hcat' from data/chars/heman/hcat.txt
+Cacheing 'rcat' from data/chars/heman/rcat.txt
+Cacheing 'hemfx' from data/chars/heman/hemfx.txt
+Cacheing 'sword' from data/chars/heman/sword.txt
+Cacheing 'powl' from data/chars/heman/powl.txt
+Cacheing 'bcat' from data/chars/bcat/bcat.txt
+Cacheing 'bcatw' from data/chars/bcat/bcatw.txt
+Cacheing 'bcath' from data/chars/bcat/bcath.txt
+Cacheing 'bcatr' from data/chars/bcat/bcatr.txt
+Cacheing 'icat' from data/sprites/icat.txt
+Cacheing 'catp' from data/sprites/catp.txt
+Cacheing 'dial' from data/sprites/dial.txt
+Cacheing 'ice' from data/sprites/ice.txt
+Cacheing 'comp' from data/sprites/comp.txt
+Cacheing 'mine' from data/sprites/mine.txt
+Cacheing 'frez' from data/sprites/frez.txt
+Cacheing 'sfrez' from data/sprites/sfrez.txt
+Cacheing 'mark' from data/sprites/mark.txt
+Cacheing 'clear' from data/sprites/clear.txt
+Cacheing 'zoom' from data/sprites/zoom.txt
+Cacheing 'ball' from data/sprites/ball.txt
+Cacheing 'balt' from data/sprites/balt.txt
+Cacheing 'gren' from data/sprites/gren.txt
+Cacheing 'robla' from data/chars/robot/robla.txt
+Cacheing 'camov' from data/sprites/camov.txt
+Cacheing 'mantenna' from data/chars/mant/mant.txt
+Cacheing 'hoha' from data/sprites/hoha.txt
+Cacheing 'pnpc' from data/sprites/pnpc.txt
+Cacheing 'fla' from data/sprites/fla.txt
+Cacheing 'ru' from data/sprites/ru.txt
+Cacheing 'bfx' from data/sprites/bfx.txt
+Cacheing 'claws' from data/sprites/claws.txt
+Cacheing 'lase' from data/sprites/lase.txt
+Cacheing 'bar' from data/sprites/bar.txt
+Cacheing 'mur' from data/sprites/mur.txt
+Cacheing 'wbat' from data/sprites/wbat.txt
+Cacheing 'wbats' from data/sprites/wbats.txt
+Cacheing 'robt' from data/chars/robt/robt.txt
+Cacheing 'bakkull' from data/chars/bak/bak.txt
+Cacheing 'collossor' from data/chars/colo/colo.txt
+Cacheing 'shadow_weaver' from data/chars/swea/swea.txt
+Cacheing 'mud' from data/chars/mud/mud.txt
+Cacheing 'cap' from data/chars/cap/cap.txt
+Cacheing 'bdrag' from data/chars/bdrag/bdrag.txt
+Cacheing 'hordak' from data/chars/hordak/hordak.txt
+Cacheing 'icem' from data/chars/icem/icem.txt
+Cacheing 'gob' from data/chars/gob/gob.txt
+Cacheing 'leech' from data/chars/leech/leech.txt
+Cacheing 'gobik' from data/chars/gob/gobik.txt
+Cacheing 'orman' from data/chars/orman/orman.txt
+Cacheing 'sku' from data/chars/sku/sku.txt
+Cacheing 'grizzlor' from data/chars/griz/griz.txt
+Cacheing 'horde' from data/chars/horde/horde.txt
+Cacheing 'hordef' from data/sprites/hordef.txt
+Cacheing 'shad' from data/chars/shad/shad.txt
+Cacheing 'fmen' from data/chars/fmen/fmen.txt
+Cacheing 'sunro' from data/chars/sunro/sunro.txt
+Cacheing 'sbeast' from data/chars/sbeast/sbeast.txt
+Cacheing 'beastman' from data/chars/bman/bman.txt
+Cacheing 'trapjaw' from data/chars/tjaw/tjaw.txt
+Cacheing 'robot' from data/chars/robot/robot.txt
+Cacheing 'cambro' from data/chars/cambro/cambro.txt
+Cacheing 'bsha' from data/chars/bsha/bsha.txt
+Cacheing 'spi' from data/chars/spi/spi.txt
+Cacheing 'catra' from data/chars/catra/catra.txt
+Cacheing 'catf' from data/chars/catra/catf.txt
+Cacheing 'snake' from data/chars/snake/snake.txt
+Cacheing 'scorpia' from data/chars/scorpia/scorpia.txt
+Cacheing 'mer-man' from data/chars/merm/merm.txt
+Cacheing 'dylamug' from data/chars/dyla/dyla.txt
+Cacheing 'rock' from data/sprites/rock.txt
+Cacheing 'gl' from data/sprites/gl.txt
+Cacheing 'skelbig' from data/sprites/skelbig.txt
+Cacheing 'port' from data/sprites/port.txt
+Cacheing 'sbox' from data/sprites/sbox.txt
+Cacheing 'bhand' from data/sprites/bhand.txt
+Cacheing 'drag' from data/sprites/drag.txt
+Cacheing 'arma' from data/sprites/arma.txt
+Cacheing 'sia' from data/sprites/sia.txt
+Cacheing 'wi' from data/sprites/wi.txt
+Cacheing 'fireb' from data/sprites/fireb.txt
+Cacheing 'wander' from data/sprites/wander.txt
+Cacheing 'gem' from data/sprites/gem.txt
+Cacheing 'randor' from data/sprites/randor.txt
+Cacheing 'pla' from data/sprites/pla.txt
+Cacheing 'scro' from data/sprites/scro.txt
+Cacheing 'vs' from data/sprites/vs.txt
+Cacheing 'ver' from data/sprites/ver.txt
+Cacheing 'day' from data/sprites/day.txt
+Cacheing 'hcar' from data/sprites/hcar.txt
+Cacheing 'fire' from data/sprites/fire.txt
+Cacheing 'balw' from data/sprites/balw.txt
+Cacheing 'wate' from data/sprites/wate.txt
+Cacheing 'law' from data/sprites/law.txt
+Cacheing 'bug' from data/sprites/bug.txt
+Cacheing 'laws' from data/sprites/laws.txt
+Cacheing 'curs' from data/sprites/curs.txt
+Cacheing 'fro' from data/sprites/fro.txt
+Cacheing 'endit' from data/sprites/endit.txt
+Cacheing 'imp' from data/sprites/imp.txt
+
+Loaded 'Flash' from data/sprites/flash.txt 
+Loaded 'Flash2' from data/sprites/flash2.txt 
+Loaded 'boom' from data/sprites/boom.txt 
+Loaded 'dust' from data/sprites/dust.txt 
+Loaded 'delay' from data/sprites/delay.txt 
+Loaded 'carw' from data/sprites/carw.txt 
+Loaded 'he-man' from data/chars/heman/heman.txt 
+Loaded 'hrock' from data/chars/heman/hrock.txt 
+Loaded 'he-man_' from data/chars/heman/heman_.txt 
+Loaded 'he-man__' from data/chars/heman/heman__.txt 
+Loaded 'she-ra' from data/chars/shera/shera.txt 
+Loaded 'sheraw' from data/chars/shera/sheraw.txt 
+Loaded 'she-ra_' from data/chars/shera/shera_.txt 
+Loaded 'swind' from data/chars/shera/swind.txt 
+Loaded 'swinw' from data/chars/shera/swinw.txt 
+Loaded 'shro' from data/chars/shera/shro.txt 
+Loaded 'battlecat' from data/chars/bcat/bcatp.txt 
+Loaded 'man-at-arms' from data/chars/manat/manat.txt 
+Loaded 'man-at-arms_' from data/chars/manat/manat_.txt 
+Loaded 'mro' from data/chars/manat/mro.txt 
+Loaded 'teela' from data/chars/teela/teela.txt 
+Loaded 'teela_' from data/chars/teela/teela_.txt 
+Loaded 'tfly' from data/chars/teela/tfly.txt 
+Loaded 'tro' from data/chars/teela/tro.txt 
+Loaded 'swort' from data/chars/teela/swort.txt 
+Loaded 'ram-man' from data/chars/rama/rama.txt 
+Loaded 'ram-man_' from data/chars/rama/rama_.txt 
+Loaded 'rro' from data/chars/rama/rro.txt 
+Loaded 'orko' from data/chars/orko/orko.txt 
+Loaded 'orko_' from data/chars/orko/orko_.txt 
+Loaded 'oro' from data/chars/orko/oro.txt 
+Loaded 'sorceress' from data/chars/sorce/sorce.txt 
+Loaded 'sorceress_' from data/chars/sorce/sorce_.txt 
+Loaded 'sorceress__' from data/chars/sorce/sorce__.txt 
+Loaded 'sro' from data/chars/sorce/sro.txt 
+Loaded 'evil-lyn' from data/chars/evel/evel.txt 
+Loaded 'evil-lyn_' from data/chars/evel/evel_.txt 
+Loaded 'evil-lyn__' from data/chars/evel/evel__.txt 
+Loaded 'efly' from data/chars/evel/efly.txt 
+Loaded 'evelu' from data/chars/evel/evelu.txt 
+Loaded 'evro' from data/chars/evel/evro.txt 
+Loaded 'skeletor' from data/chars/skele/skele.txt 
+Loaded 'skeletor_' from data/chars/skele/skele_.txt 
+Loaded 'sfly' from data/chars/skele/sfly.txt 
+Loaded 'skelo' from data/chars/skele/skelo.txt 
+Loaded 'srock' from data/chars/skele/srock.txt 
+Loaded 'panthor' from data/chars/pcat/pcatp.txt 
+Loaded 'pcat' from data/chars/pcat/pcat.txt 
+Loaded 'pcatw' from data/chars/pcat/pcatw.txt 
+Loaded 'pcath' from data/chars/pcat/pcath.txt 
+Loaded 'pcatr' from data/chars/pcat/pcatr.txt 
+Loaded 'hcatp' from data/chars/skele/hcatp.txt 
+Loaded 'lion-o' from data/chars/liono/liono.txt 
+Loaded 'lion-o_' from data/chars/liono/liono_.txt 
+Loaded 'liro' from data/chars/liono/liro.txt 
+Loaded 'lfly' from data/chars/liono/lfly.txt 
+Loaded 'rfly' from data/chars/rama/rfly.txt 
+Loaded 'mfly' from data/chars/manat/mfly.txt 
+Loaded 'zoari' from data/chars/sorce/zoari.txt 
+Loaded 'zoar' from data/chars/sorce/zoar.txt 
+Loaded 'ofly' from data/chars/orko/ofly.txt 
+Loaded 'spark' from data/sprites/spark.txt 
+Loaded 'ban' from data/sprites/ban.txt 
+Loaded 'hcat' from data/chars/heman/hcat.txt 
+Loaded 'rcat' from data/chars/heman/rcat.txt 
+Loaded 'hemfx' from data/chars/heman/hemfx.txt 
+Loaded 'sword' from data/chars/heman/sword.txt 
+Loaded 'powl' from data/chars/heman/powl.txt 
+Loaded 'bcat' from data/chars/bcat/bcat.txt 
+Loaded 'bcatw' from data/chars/bcat/bcatw.txt 
+Loaded 'bcath' from data/chars/bcat/bcath.txt 
+Loaded 'bcatr' from data/chars/bcat/bcatr.txt 
+Loaded 'icat' from data/sprites/icat.txt 
+Loaded 'catp' from data/sprites/catp.txt 
+Loaded 'dial' from data/sprites/dial.txt 
+Loaded 'ice' from data/sprites/ice.txt 
+Loaded 'comp' from data/sprites/comp.txt 
+Loaded 'mine' from data/sprites/mine.txt 
+Loaded 'frez' from data/sprites/frez.txt 
+Loaded 'sfrez' from data/sprites/sfrez.txt 
+Loaded 'mark' from data/sprites/mark.txt 
+Loaded 'clear' from data/sprites/clear.txt 
+Loaded 'zoom' from data/sprites/zoom.txt 
+Loaded 'ball' from data/sprites/ball.txt 
+Loaded 'balt' from data/sprites/balt.txt 
+Loaded 'gren' from data/sprites/gren.txt 
+Loaded 'robla' from data/chars/robot/robla.txt 
+Loaded 'camov' from data/sprites/camov.txt 
+
+Loading models...............	Done!
+Object engine init...........	Done!
+Input init...................	No Joystick(s) Found!
+Done!
+Create blending tables.......	Done!
+Save settings so far........	Done!
+
+

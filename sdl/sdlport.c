@@ -30,18 +30,18 @@ char packfile[MAX_FILENAME_LEN] = {"bor.pak"};
 char rootDir[MAX_BUFFER_LEN] = {""};
 #endif
 
-#if GCW0
-char paksDir[MAX_FILENAME_LEN] = {"/home/retrofw/games/openbor/Paks"};
-char savesDir[MAX_FILENAME_LEN] = {"/home/retrofw/games/openbor/Saves"};
-char logsDir[MAX_FILENAME_LEN] = {"/home/retrofw/games/openbor/Logs"};
-char screenShotsDir[MAX_FILENAME_LEN] = {"/home/retrofw/games/openbor/ScreenShots"};
-#else
+// #if GCW0
+// char paksDir[MAX_FILENAME_LEN] = {"/home/retrofw/games/openbor/Paks"};
+// char savesDir[MAX_FILENAME_LEN] = {"/home/retrofw/games/openbor/Saves"};
+// char logsDir[MAX_FILENAME_LEN] = {"/home/retrofw/games/openbor/Logs"};
+// char screenShotsDir[MAX_FILENAME_LEN] = {"/home/retrofw/games/openbor/ScreenShots"};
+// #else
 
 char paksDir[MAX_FILENAME_LEN] = {"Paks"};
 char savesDir[MAX_FILENAME_LEN] = {"Saves"};
 char logsDir[MAX_FILENAME_LEN] = {"Logs"};
 char screenShotsDir[MAX_FILENAME_LEN] = {"ScreenShots"};
-#endif
+// #endif
 
 // sleeps for the given number of microseconds
 #if _POSIX_C_SOURCE >= 199309L
@@ -157,4 +157,3 @@ int main(int argc, char *argv[])
 	borExit(0);
 	return 0;
 }
-

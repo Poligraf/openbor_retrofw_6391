@@ -83,14 +83,14 @@
 #define COPY_PAKS_PATH(buf, name) strcpy(buf, "ux0:/data/OpenBOR/Paks/"); strcat(buf, name);
 
 
-
-#elif GCW0
-#define CHECK_LOGFILE(type)  type ? fileExists("/home/retrofw/games/openbor/Logs/OpenBorLog.txt") : fileExists("/usr/local/home/.OpenBOR/Logs/ScriptLog.txt")
-#define OPEN_LOGFILE(type)   type ? fopen("/home/retrofw/games/openbor/Logs/OpenBorLog.txt", "wt") : fopen("/usr/local/home/.OpenBOR/Logs/ScriptLog.txt", "wt")
-#define APPEND_LOGFILE(type) type ? fopen("/home/retrofw/games/openbor/Logs/OpenBorLog.txt", "at") : fopen("/usr/local/home/.OpenBOR/Logs/ScriptLog.txt", "at")
-#define READ_LOGFILE(type)   type ? fopen("/home/retrofw/games/openbor/Logs/OpenBorLog.txt", "rt") : fopen("/usr/local/home/.OpenBOR/Logs/ScriptLog.txt", "rt")
-#define COPY_ROOT_PATH(buf, name) strncpy(buf, "/home/retrofw/games/openbor", 27); strncat(buf, name, strlen(name)); strncat(buf, "/", 1);
-#define COPY_PAKS_PATH(buf, name) strncpy(buf, "/home/retrofw/games/openbor/Paks/", 33); strncat(buf, name, strlen(name));
+// 
+// #elif GCW0
+// #define CHECK_LOGFILE(type)  type ? fileExists("/home/retrofw/games/openbor/Logs/OpenBorLog.txt") : fileExists("/usr/local/home/.OpenBOR/Logs/ScriptLog.txt")
+// #define OPEN_LOGFILE(type)   type ? fopen("/home/retrofw/games/openbor/Logs/OpenBorLog.txt", "wt") : fopen("/usr/local/home/.OpenBOR/Logs/ScriptLog.txt", "wt")
+// #define APPEND_LOGFILE(type) type ? fopen("/home/retrofw/games/openbor/Logs/OpenBorLog.txt", "at") : fopen("/usr/local/home/.OpenBOR/Logs/ScriptLog.txt", "at")
+// #define READ_LOGFILE(type)   type ? fopen("/home/retrofw/games/openbor/Logs/OpenBorLog.txt", "rt") : fopen("/usr/local/home/.OpenBOR/Logs/ScriptLog.txt", "rt")
+// #define COPY_ROOT_PATH(buf, name) strncpy(buf, "/home/retrofw/games/openbor", 27); strncat(buf, name, strlen(name)); strncat(buf, "/", 1);
+// #define COPY_PAKS_PATH(buf, name) strncpy(buf, "/home/retrofw/games/openbor/Paks/", 33); strncat(buf, name, strlen(name));
 
 
 #elif ANDROID
@@ -702,4 +702,3 @@ void Array_Check_Size( const char *f_caller, char **array, int new_size, int *cu
     // ReAssign the new allocated array
     *array = copy;
 }
-

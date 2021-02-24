@@ -1,12 +1,13 @@
 [Desktop Entry]
 Name=OpenBOR
 Comment=OpenBOR Engine r6391
-Exec=./ob.dge
+Exec=./ob.sh
 Terminal=true
 Type=Application
 StartupNotify=true
+X-OD-Selector=/home/retrofw/
+X-OD-Filter=.pak,.PAK
 Icon=openbor
 Categories=games
 X-OD-Manual=readme.retrofw.txt
 X-OD-NeedsDownscaling=true
-
