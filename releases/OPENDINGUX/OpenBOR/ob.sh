@@ -6,3 +6,4 @@ mkdir -p $HOME/.OpenBOR/Saves/;
 ln -sf  $HOME/.OpenBOR/Saves/ /tmp/Saves;
 [ ! -f $HOME/.OpenBOR/Saves/default.cfg ] && cp ./default.cfgbackup $HOME/.OpenBOR/Saves/default.cfg
 ./OpenBOR.dge;
+rm -f /tmp/Paks;
