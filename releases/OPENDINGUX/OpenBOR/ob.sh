@@ -6,4 +6,5 @@ mkdir -p $HOME/.OpenBOR/Saves/;
 ln -sf  $HOME/.OpenBOR/Saves/ /tmp/Saves;
 [ ! -f $HOME/.OpenBOR/Saves/default.cfg ] && cp ./default.cfgbackup $HOME/.OpenBOR/Saves/default.cfg
 ./OpenBOR.dge;
-rm -f /tmp/Paks;
+rm -f "/tmp/Paks/$(basename "${@%.*}")".pak"" ;
+rm -f "/tmp/Paks/$(basename "${@%.*}")".PAK"" ;

@@ -480,7 +480,7 @@ CFLAGS             += -D_REENTRANT -DOPENDINGUX -DGCW0 -O3 -fomit-frame-pointer 
 											-flto=4 -fwhole-program -fuse-linker-plugin -fmerge-all-constants \
 											-funswitch-loops -fno-strict-aliasing -ftree-vectorize \
 											-mips32 -mtune=mips32 -mno-mips16 -mno-shared -mbranch-likely -pipe \
-									 		 -fprofile-use -fprofile-dir=./profile #-fprofile-generate -fprofile-dir=/home/retrofw/ob
+									 		  -fprofile-use -fprofile-dir=./profile #	-fprofile-generate -fprofile-dir=/home/retrofw/ob
 else
 CFLAGS             += -D_REENTRANT -DOPENDINGUX -DGCW0 -O3 -fomit-frame-pointer -ffunction-sections -ffast-math  -G0 -mbranch-likely -fcommon \
 											-falign-functions -falign-labels -falign-loops -falign-jumps \
@@ -492,7 +492,7 @@ CFLAGS             += -D_REENTRANT -DOPENDINGUX -DGCW0 -O3 -fomit-frame-pointer 
 											-flto=4 -fwhole-program -fuse-linker-plugin -fmerge-all-constants \
 											-funswitch-loops -fno-strict-aliasing -ftree-vectorize \
 											-mips32 -mtune=mips32 -mno-mips16 -mno-shared -mbranch-likely -pipe \
-									 		 -fprofile-use -fprofile-dir=./profile #	-fprofile-generate -fprofile-dir=/home/retrofw/ob
+									 		 -fprofile-use -fprofile-dir=./profile 	#-fprofile-generate -fprofile-dir=/home/retrofw/ob
 endif
 endif
 
